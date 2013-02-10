@@ -6,7 +6,7 @@ class CMSAdminRedirectController extends AdminComponent{
   public $model_class = 'WildfireUrlMap';
   public $display_name = "Redirects";
   public $dashboard = false;
-
+  public $singular = "Item";
 
   protected function events(){
     parent::events();
