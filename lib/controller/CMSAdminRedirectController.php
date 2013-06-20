@@ -7,6 +7,9 @@ class CMSAdminRedirectController extends AdminComponent{
   public $display_name = "Redirects";
   public $dashboard = false;
   public $singular = "Item";
+  public $filter_fields=array(
+                          'text' => array('columns'=>array('origin_url', 'title', 'destination_url'), 'partial'=>'_filters_text', 'fuzzy'=>true)
+                        );
 
   protected function events(){
     parent::events();
