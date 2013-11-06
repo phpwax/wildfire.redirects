@@ -23,6 +23,8 @@ class CMSAdminRedirectController extends AdminComponent{
     WaxEvent::add("cms.save.before", function(){
       $obj = WaxEvent::data();
       $obj->model->track_url = 1;
+      if(!$obj->date_start) $obj->date_start = date("Y-m-d");
+      if(!$obj->date_end) $obj->date_end = date("Y-m-d", strtotime("-10 years"));
     });
 
   }
