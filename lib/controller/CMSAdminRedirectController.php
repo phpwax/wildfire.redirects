@@ -25,6 +25,7 @@ class CMSAdminRedirectController extends AdminComponent{
       $obj->model->track_url = 1;
       if(!$obj->date_start) $obj->date_start = date("Y-m-d");
       if(!$obj->date_end) $obj->date_end = date("Y-m-d", strtotime("-10 years"));
+      if(substr($obj->origin_url, -1) !== "/") $obj->origin_url .= "/";
     });
 
   }
